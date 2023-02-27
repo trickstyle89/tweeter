@@ -8,9 +8,37 @@ nav {
     padding: 0 1.5em;
     align-items: center;
     justify-content: space-between;
+  }
 
+  .new-tweet {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
   
-  nav span {
-    font-family: Bungee;
+  .new-tweet span {
+    font-family: Helvetica;
+    font-size: large;
+
+    margin-right: 1.5em;
   }
+  This will set the font family of the "Write a new tweet" text to Helvetica and add a margin to the right of it. The .new-tweet class is also updated to use flexbox to align its contents and margin-left: auto to push it to the right side of the navbar.
+  
+  
+  
+  
+  Ivan Chew
+  nothing needs to be changed here? <body>
+      <!-- Top nav bar (fixed) -->
+      <nav>
+        <span>tweeter</span>
+        <div class="new-tweet">
+          <span>Write a new tweet</span>
+        </div>
+      </nav>
+  No, the HTML code you provided is correct for displaying a navigation bar with the "tweeter" logo on the left and "Write a new tweet" text on the right.
+  
+  
+  
+  
+  
