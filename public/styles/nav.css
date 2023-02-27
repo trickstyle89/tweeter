@@ -19,10 +19,12 @@ nav {
   .new-tweet span {
     font-family: Helvetica;
     font-size: large;
-
     margin-right: 1.5em;
   }
-  This will set the font family of the "Write a new tweet" text to Helvetica and add a margin to the right of it. The .new-tweet class is also updated to use flexbox to align its contents and margin-left: auto to push it to the right side of the navbar.
+
+  .bold-text {
+    font-weight: bold;
+  }
   
   
   
