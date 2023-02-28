@@ -1,5 +1,17 @@
-* {
-    margin: 100;
-    padding: 50;
-    box-sizing: border-box;
+*
+  body {
+    font-family: sans-serif;
+    background-image: url('45-degree-fabric-dark.png');
+    background-color: #4056A1;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100 1rem;
+    background-color: whitesmoke;
+  }
+
+  .new-tweet {
+    margin: 2rem 0;
   }
