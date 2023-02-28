@@ -3,7 +3,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(50vh - 120px);
+    height: calc(50vh - 120px);;
     width: 100%;
     background-image: url('../public/images/45-degree-fabric-dark.png');
     background-color: #e3a916;
