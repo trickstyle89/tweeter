@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -59,7 +60,24 @@
       </div>
     </form>
     <div class="tweets-container">
-      <!-- all the tweets will go here -->
+      <article class="tweet">
+        <header>
+          <img src="/images/profile-hex.png" alt="User avatar">
+          <p>Jane Doe</p>
+          <p>@janedoe</p>
+        </header>
+        <div class="tweet-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id elit in nunc consequat finibus ut sit amet diam.</p>
+        </div>
+        <footer>
+          <p>10:30 AM - 1 Jan 2022</p>
+          <div class="actions">
+            <a href="#">Like</a>
+            <a href="#">Retweet</a>
+            <a href="#">Reply</a>
+          </div>
+        </footer>
+      </article>
     </div>
   </section>
 </main>
