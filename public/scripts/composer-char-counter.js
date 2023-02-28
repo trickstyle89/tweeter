@@ -15,10 +15,16 @@ $(document).ready(function() {
 
     // Calculate the remaining characters
     let remaining = 140 - length;
-    console.log('remaining characters line, 21', remaining);
+    console.log('remaining characters line, 18', remaining);
 
     // Update the counter on the page
-    counter.text(remaining);
+    $('.new-tweet .counter').text(remaining);
+
+    if (remaining < 0) {
+      counter.addClass('counter-negative');
+    } else {
+      counter.removeClass('counter-negative');
+    }
   });
 });
   
