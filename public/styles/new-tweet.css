@@ -8,25 +8,49 @@
   .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 100 1rem;
+    padding: 10px;
     background-color: whitesmoke;
   }
 
   .new-tweet { /* possible conflict with top right button*/
-    margin: 2rem 0;
+    margin: 10px;
   }
 
   .new-tweet h2 {
     font-size: small;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
   }
 
   .new-tweet label {
-    display: block;
+    display: line;
     font-size: large;
     margin-bottom: 0.5rem;
   }
   
-  .submit {
-    font-size: small;
+  .new-tweet textarea {
+    display: line;
+    width: 100%;
+    min-height: 100px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+
+  .new-tweet button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .new-tweet .counter {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 0.5rem;
   }
