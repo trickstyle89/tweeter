@@ -28,7 +28,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="new-tweet">
+      <div class="new-tweeter">
         <span><strong>Write</strong> a new tweet</span> 
         <i class="fa-solid fa-angles-down"></i>
       </div>
@@ -45,18 +45,18 @@
     
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="Enter your tweet here"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-    </main>
+  <main class="container">
+  <section class="new-tweet">
+    <form action="/tweets" method="POST">
+      <label for="tweet-text">What are you humming about?</label>
+      <textarea name="text" id="tweet-text"></textarea>
+      <div>
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </div>
+    </form>
+  </section>
+</main>
 
 
   </body>

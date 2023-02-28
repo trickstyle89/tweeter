@@ -11,18 +11,18 @@ nav {
     position: fixed;
   }
 
-  .new-tweet {
+  .new-tweeter {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
   }
   
-  .new-tweet span {
+  .new-tweeter span {
     font-family: Helvetica;
     font-size: large;
   }
 
-  .new-tweet i {
+  .new-tweeter i {
     color:red
   }
