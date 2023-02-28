@@ -20,11 +20,16 @@ $(document).ready(function() {
     // Update the counter on the page
     $('.new-tweet .counter').text(remaining);
 
+    // Update the counter to red when negative.
+    
+    // counter.css('color', remaining < 0 ? 'red' : '#3a3131');
+    
     if (remaining < 0) {
-      counter.addClass('counter-negative');
+      $('.counter').css('color', 'red');
     } else {
-      counter.removeClass('counter-negative');
+      $('.counter').css('color', 'black');
     }
+
   });
 });
   
