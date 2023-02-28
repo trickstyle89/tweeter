@@ -3,13 +3,15 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 120px);;
+    height: 500px;
     width: 100%;
     background-image: url('45-degree-fabric-dark.png');
     background-color: #fffc35;
 }
   
   header img {
+    display: flex;
+    margin-top: 150px;
     width: 200px;
     height: 200px;
     object-fit: cover;

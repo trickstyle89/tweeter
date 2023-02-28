@@ -12,6 +12,21 @@
     background-color: whitesmoke;
   }
 
-  .new-tweet {
+  .new-tweet { /* possible conflict with top right button*/
     margin: 2rem 0;
+  }
+
+  .new-tweet h2 {
+    font-size: small;
+    margin-bottom: 2rem;
+  }
+
+  .new-tweet label {
+    display: block;
+    font-size: large;
+    margin-bottom: 0.5rem;
+  }
+  
+  .submit {
+    font-size: small;
   }
