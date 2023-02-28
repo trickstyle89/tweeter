@@ -12,15 +12,6 @@
     background-color: whitesmoke;
   }
 
-  .new-tweet { /* possible conflict with top right button*/
-    margin: 10px;
-  }
-
-  .new-tweet h2 {
-    font-size: small;
-    margin-bottom: 10px;
-  }
-
   .new-tweet label {
     display: line;
     font-size: large;
@@ -29,12 +20,12 @@
   
   .new-tweet textarea {
     display: inline-block;
-    width: 100%;
+    width: 90%;
     min-height: 20px;
-    font-size: 1rem;
-    padding: 0.5rem;
+    font-size: 16px;
+    padding: 10pxrem;
     border: none;
-    border-bottom: 5px solid #3a3131;
+    border-bottom: 3px solid #3a3131;
     resize: vertical;
     margin-bottom: 1rem;
   }
@@ -50,7 +41,8 @@
   }
 
   .new-tweet .counter {
-    font-size: 1rem;
+    font-size: 18px;
     color: #888;
     margin-top: 0.5rem;
+    float: right;
   }
