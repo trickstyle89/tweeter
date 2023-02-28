@@ -8,6 +8,7 @@ nav {
     padding: 0 1.5em;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
   }
 
   .new-tweet {

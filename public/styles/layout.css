@@ -10,11 +10,16 @@ html {
   box-sizing: inherit;
 }
 
-/* nav {
+nav {
   font-family: 'Bungee', sans-serif;
+  position: fixed;
 }
-*/
 
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+}
 /*
  * Global layout stuff
  */
@@ -26,6 +31,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ /* background-color: #e3a916; */
