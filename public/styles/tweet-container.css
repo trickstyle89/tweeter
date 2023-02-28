@@ -1,3 +1,63 @@
-.tweets-container {
-    display: flex;
+.tweets-container .tweet header {
+    padding-top: 1rem;
+    background-color: #fff;
+    background-image: none;
+    height: 200px;
+    border: 3px #3a3131;
+    font-size: 16px;
+    align-content: center;
 }
+
+
+.tweets-container {
+    overflow-y: scroll;
+  }
+
+.tweet {
+    background-color: #fff;
+    border: 3px solid #3a3131;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+}
+ 
+.tweet-content {
+    border-bottom: 3px solid #3a3131;
+
+}
+
+.tweet header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tweet header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+
+.tweet footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+.tweet footer .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tweet footer p {
+    margin: 10px;
+    font-size: 0.8rem;
+    color: #777;
+    justify-content: flex-start;
+  }
+
+  
+
+  
