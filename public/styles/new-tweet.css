@@ -8,6 +8,7 @@
   .container {
     max-width: 960px;
     margin: 0 auto;
+    margin-top: 1rem;
     padding: 10px;
     background-color: whitesmoke;
   }
