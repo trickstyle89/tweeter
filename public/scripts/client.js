@@ -31,6 +31,82 @@ const tweetsData = [
 ];
 
 $(document).ready(function() {
+  // Select the form element
+  const $form = $('#tweet-form');
+    
+  // Add an event listener that listens for the submit event
+  $form.on('submit', function(event) {
+    // Prevent the default behaviour of the submit event
+    event.preventDefault();
+      
+    // Create an AJAX POST request in client.js that sends the form data to the server
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function() {
+        console.log('Tweet submitted successfully');
+      },
+      error: function(error) {
+        console.log('Tweet submission failed:', error);
+      }
+    });
+  });
+  
+  const createTweetElement = function(tweetData) {
+    const { name, avatars, handle } = tweetData.user;
+    const { text } = tweetData.content;
+    const dateCreated = tweetData.created_at;
+  
+    const tweetHtml = `
+        <article class="tweet">
+          <header>
+            <img src="${avatars}" alt="User avatar">
+            <p>${name}</p>
+            <p>${handle}</p>
+          </header>
+          <div class="tweet-content">
+            ${text}
+          </div>
+          <footer>
+            <span class="tweet-age">${dateCreated}</span>
+            <div class="actions">
+              <i class="fa fa-flag"></i>
+              <i class="fa fa-retweet"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      `;
+  
+    // Return the tweet jQuery object
+    return $(tweetHtml);
+  };
+  
+  
+  const renderTweets = function(tweets) {
+    // Get the tweets container element
+    const $tweetsContainer = $('#tweets-container');
+        
+    // Loop through the tweets array
+    for (const tweet of tweets) {
+      // Create a tweet element with the tweet data
+      const $tweet = createTweetElement(tweet);
+        
+      // Append the tweet element to the tweets container
+      $tweetsContainer.append($tweet);
+    }
+  };
+  
+  renderTweets(tweetsData);
+  
+});
+  
+
+
+/*
+
+$(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
     const { name, avatars, handle } = tweetData.user;
@@ -80,3 +156,5 @@ $(document).ready(function() {
   renderTweets(tweetsData);
 
 });
+
+*/
