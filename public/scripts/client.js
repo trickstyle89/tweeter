@@ -5,7 +5,7 @@
  */
 
 
-const tweetsObj = [
+const tweetsData = [
   {
     "user": {
       "name": "Newton",
@@ -32,10 +32,10 @@ const tweetsObj = [
 
 $(document).ready(function() {
 
-  const createTweetElement = function(tweetsObj) {
-    const { name, avatars, handle } = tweetsObj.user;
-    const { text } = tweetsObj.content;
-    const dateCreated = tweetsObj.created_at;
+  const createTweetElement = function(tweetData) {
+    const { name, avatars, handle } = tweetData.user;
+    const { text } = tweetData.content;
+    const dateCreated = tweetData.created_at;
 
     const tweetHtml = `
     <article class="tweet">
@@ -77,7 +77,7 @@ $(document).ready(function() {
     }
   };
 
-  renderTweets();
+  renderTweets(tweetsData);
 
 
 
