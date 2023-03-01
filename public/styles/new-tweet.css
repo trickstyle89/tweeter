@@ -1,7 +1,6 @@
 *
   body {
     font-family: sans-serif;
-    background-image: url('45-degree-fabric-dark.png');
     background-color: #ffffff;
   }
 
@@ -10,11 +9,11 @@
     margin: 0 auto;
     margin-top: 1rem;
     padding: 10px;
-    background-color: whitesmoke;
+    background-color: #ffffff
   }
 
 .new-tweet div {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.0rem;
 }
 
   .new-tweet label {
@@ -28,6 +27,7 @@
     width: 100%;
     max-height: 35px;
     font-size: 16px;
+    color: #ffffff;
     padding: 10px;
     border: none;
     border-bottom: 3px solid #3a3131;
