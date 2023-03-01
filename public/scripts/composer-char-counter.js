@@ -27,7 +27,7 @@ $(document).ready(function() {
     if (remaining < 0) {
       $('.counter').css('color', 'red');
     } else {
-      $('.counter').css('color', 'black');
+    $('.counter').css('color', 'black');
     }
 
   });

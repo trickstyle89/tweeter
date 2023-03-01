@@ -17,12 +17,11 @@ const tweetsObj =  {
   "created_at": 1461116232227
 };
 
+$(document).ready(function() {
 
-
-const createTweetElement = function() {
-
+const createTweetElement = function(tweetsObj) {
 const { name, avatars, handle } = tweetsObj.user;
-const { tweetContent } = tweetsObj.content;
+const { text } = tweetsObj.content;
 const dateCreated = tweetsObj.created_at;
 
 const tweetHtml = `
@@ -33,7 +32,7 @@ const tweetHtml = `
         <p>${handle}</p>
       </header>
       <div class="tweet-content">
-        ${tweetContent}
+        ${text}
       </div>
       <footer>
         <span class="tweet-age">${dateCreated}</span>
@@ -50,26 +49,14 @@ const tweetHtml = `
   return tweetHtml;
 };
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
+const renderTweets = function() {
+const $tweet = createTweetElement(tweetsObj);
+console.log('tweets', $tweet);
+$("#tweets-container").append($tweet);
+console.log($("#tweets-container"));
 };
 
-const $tweet = createTweetElement(tweetsObj);
-console.log($tweet);
-
-
-// Append the tweet to the tweets container
-$('#tweets-container').append($tweet);
-
-
+renderTweets();
 
 
 
@@ -96,3 +83,5 @@ $(document).ready(() => {
 });
 
 */
+
+});
