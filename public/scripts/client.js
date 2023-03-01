@@ -65,10 +65,10 @@ const tweetData = {
 const $tweet = createTweetElement(tweetsObj);
 console.log($tweet);
 
-/*
+
 // Append the tweet to the tweets container
 $('#tweets-container').append($tweet);
-*/
+
 
 
 
