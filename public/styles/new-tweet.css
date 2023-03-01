@@ -13,6 +13,10 @@
     background-color: whitesmoke;
   }
 
+.new-tweet div {
+  margin-bottom: 1.5rem;
+}
+
   .new-tweet label {
     display: line;
     font-size: large;
@@ -28,7 +32,7 @@
     border: none;
     border-bottom: 3px solid #3a3131;
     resize: vertical;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .new-tweet button {
@@ -37,7 +41,7 @@
     background-color: #4056A1;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
   }
 
