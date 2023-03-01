@@ -1,6 +1,11 @@
 .tweets-container {
     padding-top: 1rem;
     overflow-y: scroll;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .tweets-container:hover {
+    box-shadow: 5px 5px 10px rgba(16, 0, 0, 0.666);
   }
 
 .tweets-container .tweet header {
@@ -15,9 +20,13 @@
     border: 3px solid #3a3131;
     border-radius: 5px;
     padding: 0.5rem;
-
 }
- 
+
+/* .tweet:hover {
+    box-shadow: 5px 5px 10px rgba(239, 6, 6, 0.2);
+  }
+*/
+
 .tweet-content {
     border-bottom: 3px solid #3a3131;
 }
@@ -54,12 +63,17 @@
 .tweet footer .actions {
     display: flex;
     gap: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .tweet footer .actions i:hover {
+    color: #f90404;
   }
 
   .tweet footer p {
     margin: 10px;
     font-size: 0.8rem;
-    color: #777;
+    color: #242222;
     justify-content: flex-start;
   }
   
