@@ -17,9 +17,9 @@ const tweetsObj =  {
   "created_at": 1461116232227
 };
 
-const $tweet = createTweetElement(tweetsObj);
 
-const createTweetElement = function(tweetsObj) {
+
+const createTweetElement = function() {
 
 const { name, avatars, handle } = tweetsObj.user;
 const { tweetContent } = tweetsObj.content;
@@ -29,14 +29,14 @@ const tweetHtml = `
     <article class="tweet">
       <header>
         <img src="${avatars}" alt="User avatar">
-        <h2>${name}</h2>
-        <span class="handle">${handle}</span>
+        <p>${name}</p>
+        <p>${handle}</p>
       </header>
       <div class="tweet-content">
-        ${text}
+        ${tweetContent}
       </div>
       <footer>
-        <span class="tweet-age">${timeago.format(createdAt)}</span>
+        <span class="tweet-age">${dateCreated}</span>
         <div class="actions">
           <i class="fa fa-flag"></i>
           <i class="fa fa-retweet"></i>
@@ -47,8 +47,8 @@ const tweetHtml = `
   `;
 
   // Return the tweet jQuery object
-  return $(tweetHtml);
-}
+  return tweetHtml;
+};
 
 const tweetData = {
   "user": {
@@ -65,15 +65,15 @@ const tweetData = {
 const $tweet = createTweetElement(tweetsObj);
 console.log($tweet);
 
-
+/*
 // Append the tweet to the tweets container
 $('#tweets-container').append($tweet);
+*/
 
 
 
 
 
-}
 /*
 
 //example from class
