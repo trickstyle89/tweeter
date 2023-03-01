@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
+/*
 const tweetsData = [
   {
     "user": {
@@ -29,6 +29,7 @@ const tweetsData = [
     "created_at": 1461113959088
   }
 ];
+*/
 
 $(document).ready(function() {
 
@@ -76,6 +77,25 @@ $(document).ready(function() {
     }
   };
 
+  const loadTweets = function() {
+  
+    //Use JQuery to make GET request
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json'
+    })
+      .then(function(response) {
+        //if successful, render the tweets
+        renderTweets(response);
+      })
+      .catch(function(error) {
+        console.log('Error', error);
+      });
+  };
+
+  loadTweets();
+
   // Add an event listener that listens for the submit event
   $('#tweet-form').submit(function(event) {
     // Prevent the default behavior of the submit event
@@ -83,7 +103,6 @@ $(document).ready(function() {
     
     // Serialize the form data
     const formData = $(this).serialize();
-    console.log('line 86', formData);
     
     // Use AJAX to submit a POST request that sends the serialized data to the server
     $.ajax({
@@ -93,20 +112,19 @@ $(document).ready(function() {
     })
 
       .then(function(response) {
-      // If the request is successful, render the new tweet
+
+        // If the request is successful, render the new tweet
         renderTweets([response]);
       
         // Clear the tweet input
         $('#tweet-text').val('');
       
+        
         // Reset the character counter
         $('.counter').text('140');
       })
       .catch(function(error) {
-        console.log('Error:', error);
       });
   });
-
-  renderTweets(tweetsData);
 
 });
