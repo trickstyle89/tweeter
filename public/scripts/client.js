@@ -79,30 +79,4 @@ $(document).ready(function() {
 
   renderTweets(tweetsData);
 
-
-
-
-  /*
-
-//example from class
-const createPostElement = function() {
-    const newArticle = $("<article>");
-    const newH1 = $("<h1>");
-    const newP = $("<p>");
-}
-
-const arrayOfTitles = ["Item", "name", "Date"]
-
-/*
-
-$(document).ready(() => {
-    for (const title of arrayOfTitles) {
-    const newPost = createPostElement(title);
-    $("section").append(newPost);
-    }
-
-});
-
-*/
-
 });
