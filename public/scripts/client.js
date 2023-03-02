@@ -17,11 +17,12 @@
 $(document).ready(function() {  // my whole function is wrapped in this.  A good or bad thing?
 
   const createTweetElement = function(tweetData) {
-    // const { name, avatars, handle } = tweetData.user; // object destructuring is not working because new tweets don't have this.
 
-    const name = tweetData.user;   // ? tweetData.user.name : 'Ivan Chew';
-    const avatars = tweetData.user;  //  ? tweetData.user.avatars : '/images/profile-hex.png';  ** attempt at conditionals to help offset the error.
-    const handle = tweetData.user;  // ? tweetData.user.handle : '@ChewStory'; 
+    const { name, avatars, handle } = tweetData.user; // object destructuring is not working because new tweets don't have this.
+
+    // const name = tweetData.user.name;   // ? tweetData.user.name : 'Ivan Chew';
+    // const avatars = tweetData.user.avatars;  //  ? tweetData.user.avatars : '/images/profile-hex.png';  ** attempt at conditionals to help offset the error.
+    // const handle = tweetData.user.handle;  // ? tweetData.user.handle : '@ChewStory'; 
     
     const { text } = tweetData.content; // ? tweetData.content: dataForm; // even with the use of ternary operators. I still get errors once it reachs down here.
     const dateCreated = timeago.format(tweetData.created_at);
@@ -115,7 +116,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
-    console.log('line 100 is coming out as serialized data', formData);
+    // console.log('line 100 is coming out as serialized data', formData); *** troubleshooting
     
     // Use AJAX to submit a POST request that sends the serialized data to the server
     $.ajax({
