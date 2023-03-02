@@ -5,7 +5,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// I  believe that I am getting this error because I am only sending the text as empty and it is coming back
+// I am getting this error because I am only sending the text as empty and it is coming back
 // through the createTweetElement
 // *** How is this still working even with this error?
 
@@ -17,7 +17,7 @@
 // Unchecked runtime.lastError: The message port closed before a response was received. Sporactic.
 // Only happens when I refresh without doing anything.
 // Also looks like it is related to the jQuery error. Only pops up AFTER.
-
+//jquery empty
 
 
 $(document).ready(function() {  // my whole function is wrapped in this.  A good or bad thing?
@@ -25,11 +25,6 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
   const createTweetElement = function(tweetData) {
 
     const { name, avatars, handle } = tweetData.user; // object destructuring is not working because new tweets don't have this.
-
-    // const name = tweetData.user.name;   // ? tweetData.user.name : 'Ivan Chew';
-    // const avatars = tweetData.user.avatars;  //  ? tweetData.user.avatars : '/images/profile-hex.png';  ** attempt at conditionals to help offset the error.
-    // const handle = tweetData.user.handle;  // ? tweetData.user.handle : '@ChewStory'; 
-    
     const { text } = tweetData.content; // ? tweetData.content: dataForm; // even with the use of ternary operators. I still get errors once it reachs down here.
     const dateCreated = timeago.format(tweetData.created_at);
 
@@ -62,25 +57,13 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     // Get the tweets container element
     const $tweetsContainer = $('#tweets-container');
     
-    tweets.reverse(); // reverses the order?
-
     // Loop through the tweets array
     for (const tweet of tweets) {
       // Create a tweet element with the tweet data
       const $tweet = createTweetElement(tweet);
       
       // Append the tweet element to the tweets container
-     
-      $tweetsContainer.append($tweet);
-
-      /*  if (prepend) {
-        $tweetsContainer.prepend($tweet);  // *** trying to prepend
-      } else {
-        $tweetsContainer.append($tweet);
-      }
-      */
-
-      // $tweetsContainer[prepend ? 'prepend' : 'append']($tweet); // ternary;
+      $tweetsContainer.prepend($tweet);
 
     }
   };
@@ -105,7 +88,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
   loadTweets();
 
   // Add an event listener that listens for the submit event
-  $('#tweet-form').submit(function(event) {
+  $('#tweet-form').submit(function(event) {  // is this the best way?  Should I use click here instead?
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
@@ -134,20 +117,20 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
       data: formData
     })
 
-      .then(function(response) {
+      .then(loadTweets);
 
-        // If the request is successful, render the new tweet
-        // renderTweets([response], true);  // trying to use for append.
-        renderTweets([response]);
+    // If the request is successful, render the new tweet
+    // renderTweets([response], true);  // trying to use for append.
+    // renderTweets(response);
 
-        // Clear the tweet input
-        $('#tweet-text').val('');
+    // Clear the tweet input
+    $('#tweet-text').val('');
       
-        // Reset the character counter
-        $('.counter').text('140');
-      })
-      .catch(function(error) {
-      });
+    // Reset the character counter
+    $('.counter').text('140');
+      
+    //(function(error) {
+    // });
   });
 
 });
