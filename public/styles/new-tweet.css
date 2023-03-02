@@ -52,7 +52,7 @@
     font-family: Bungee;
   }
 
-  .error {
+  .errorMsg {
     color: red;
     font-weight: bold;
     margin-top: 5px;

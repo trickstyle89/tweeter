@@ -57,7 +57,8 @@
     <!-- Page-specific (main) content here -->
   <main class="container">
   <section class="new-tweet">
-    <div id="errorMsg"></div> <!-- new element for error messages -->
+    <div id="errorMsgOne">Cannot be empty!</div> <!-- new element for error messages -->
+    <div id="errorMsgTwo">More then 140 characters!</div> <!-- new element for error messages -->
     <form id="tweet-form" action="/tweets" method="POST">
       <label for="tweet-text">What are you humming about?</label>
       <textarea name="text" id="tweet-text"></textarea>

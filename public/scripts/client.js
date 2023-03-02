@@ -79,6 +79,11 @@ $(document).ready(function() {
 
   loadTweets();
 
+  // ALWAYS need to hide FIRST.
+  $('#errorMsgOne').hide()
+
+   // ALWAYS need to hide SECOND.
+   $('#errorMsgTwo').hide()
 
   // Add an event listener that listens for the submit event
   $('#tweet-form').submit(function(event) {
@@ -89,16 +94,19 @@ $(document).ready(function() {
     const tweetText = $('#tweet-text').val();
        
     // Check if the tweet is empty or too long
+    
     if (!tweetText) {
-      $('#errorMsg').text('Error: Tweet content is empty.').show();
+      $('.new-tweet').submit(function() {
+        $('#errorMsgOne').slideDown();
+      });
       return;
     } else if (tweetText.length > 140) {
-      $('#errorMsg').text('Error: Tweet content is too long.').show();
+      $('#errorMsgTwo').slideDown();
       return;
-    } else {
-      $('#errorMsg').hide(); // hide the error message if there are no errors
-    }
-    
+    } else
+    $('#errorMsgOne').hide(); // hide the error message if there are no errors
+    $('#errorMsgOne').hide();
+
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
     
