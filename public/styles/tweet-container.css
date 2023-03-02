@@ -1,10 +1,16 @@
 .tweets-container {
     overflow-y: scroll;
-    transition: box-shadow 0.3s ease-in-out;
 }
 
   .tweets-container:hover {
-    box-shadow: 5px 5px 10px rgba(16, 0, 0, 0.666);
+}
+
+article {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+ article:hover {
+  box-shadow: 5px 5px 10px rgba(16, 0, 0, 0.666);
 }
 
 .tweets-container .tweet header {
@@ -19,6 +25,7 @@
     border: 3px solid #3a3131;
     border-radius: 5px;
     padding: 0.5rem;
+    margin: 1em;
 }
 
 .tweet-content {
@@ -69,4 +76,11 @@
     color: #242222;
     justify-content: flex-start;
   }
+
+  header img {
+    width: 50px;
+    height: 50px;
+    padding: 0.5em;
+    margin-top: 0px;
+    }
   

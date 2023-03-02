@@ -9,7 +9,7 @@ header {
     background-color: #fffc35;
 }
   
-  header img {
+  header div img {
     display: flex;
     margin-top: 150px;
     width: 200px;

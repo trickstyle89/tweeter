@@ -5,12 +5,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// I strongly believe that I am getting this error because I am only sending the text as empty and it is 
+// I  believe that I am getting this error because I am only sending the text as empty and it is coming back
+// through the createTweetElement
 // *** How is this still working even with this error?
-// Unchecked runtime.lastError: The message port closed before a response was received.
+
+// Because loadTweets is still able to followthrought the GET request and render.
+
 // Does the fact that I have nested my entire code in the .ready(function) a reason for my issues?
 // If so what can I take out and keep in?
-//
+
+// Unchecked runtime.lastError: The message port closed before a response was received. Sporactic.
+// Only happens when I refresh without doing anything.
+// Also looks like it is related to the jQuery error. Only pops up AFTER.
 
 
 
@@ -73,6 +79,9 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
         $tweetsContainer.append($tweet);
       }
       */
+
+      // $tweetsContainer[prepend ? 'prepend' : 'append']($tweet); // ternary;
+
     }
   };
 
