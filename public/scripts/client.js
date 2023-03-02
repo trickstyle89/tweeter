@@ -108,8 +108,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     // Reset the character counter
     $('.counter').text('140');
       
-    //(function(error) {
-    // });
+
   });
 
 });
