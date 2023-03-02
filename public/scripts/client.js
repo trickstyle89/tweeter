@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -36,7 +37,14 @@ $(document).ready(function() {
   const createTweetElement = function(tweetData) {
     const { name, avatars, handle } = tweetData.user;
     const { text } = tweetData.content;
-    const dateCreated = tweetData.created_at;
+    const dateCreated = timeago.format(tweetData.created_at); // original ****
+  
+    //const dateCreated = new Date(tweetData.created_at); //second attempt
+    //const tweetAge = jQuery.timeago(dateCreated);
+    
+    // const dateCreated = jQuery.timeago(new Date('tweetData.created_at')); // last attempt
+    
+    // const tweetAge = jQuery.timeago(tweetData.created_at); 
 
     const tweetHtml = `
     <article class="tweet">
@@ -49,7 +57,7 @@ $(document).ready(function() {
         ${text}
       </div>
       <footer>
-        <span class="tweet-age">${dateCreated}</span>
+        <span class="tweet-age">${(dateCreated)}</span>
         <div class="actions">
           <i class="fa fa-flag"></i>
           <i class="fa fa-retweet"></i>
