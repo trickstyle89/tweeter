@@ -5,21 +5,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// I am getting this error because I am only sending the text as empty and it is coming back
-// through the createTweetElement
-// *** How is this still working even with this error?
-
-// Because loadTweets is still able to followthrought the GET request and render.
-
-// Does the fact that I have nested my entire code in the .ready(function) a reason for my issues?
-// If so what can I take out and keep in?
-
-// Unchecked runtime.lastError: The message port closed before a response was received. Sporactic.
-// Only happens when I refresh without doing anything.
-// Also looks like it is related to the jQuery error. Only pops up AFTER.
-//jquery empty
-
-
 $(document).ready(function() {  // my whole function is wrapped in this.  A good or bad thing?
 
   const createTweetElement = function(tweetData) {
@@ -53,16 +38,15 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     return $(tweetHtml);
   };
 
-  const renderTweets = function(tweets) { // prepend = false
+  const renderTweets = function(tweets) {
     // Get the tweets container element
-    const $tweetsContainer = $('#tweets-container');
+    const $tweetsContainer = $('#tweets-container').empty(); //empty this 
     
     // Loop through the tweets array
     for (const tweet of tweets) {
       // Create a tweet element with the tweet data
       const $tweet = createTweetElement(tweet);
-      
-      // Append the tweet element to the tweets container
+
       $tweetsContainer.prepend($tweet);
 
     }
@@ -88,7 +72,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
   loadTweets();
 
   // Add an event listener that listens for the submit event
-  $('#tweet-form').submit(function(event) {  // is this the best way?  Should I use click here instead?
+  $('#tweet-form').submit(function(event) {
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
@@ -108,7 +92,6 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
-    // console.log('line 100 is coming out as serialized data', formData); *** troubleshooting
     
     // Use AJAX to submit a POST request that sends the serialized data to the server
     $.ajax({
@@ -118,10 +101,6 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
     })
 
       .then(loadTweets);
-
-    // If the request is successful, render the new tweet
-    // renderTweets([response], true);  // trying to use for append.
-    // renderTweets(response);
 
     // Clear the tweet input
     $('#tweet-text').val('');
