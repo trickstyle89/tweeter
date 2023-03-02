@@ -5,46 +5,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-/*
-const tweetsData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-*/
-
 $(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
     const { name, avatars, handle } = tweetData.user;
     const { text } = tweetData.content;
-    const dateCreated = timeago.format(tweetData.created_at); // original ****
-  
-    //const dateCreated = new Date(tweetData.created_at); //second attempt
-    //const tweetAge = jQuery.timeago(dateCreated);
-    
-    // const dateCreated = jQuery.timeago(new Date('tweetData.created_at')); // last attempt
-    
-    // const tweetAge = jQuery.timeago(tweetData.created_at);
+    const dateCreated = timeago.format(tweetData.created_at);
 
     const tweetHtml = `
     <article class="tweet">
@@ -141,7 +107,6 @@ $(document).ready(function() {
         // Clear the tweet input
         $('#tweet-text').val('');
       
-        
         // Reset the character counter
         $('.counter').text('140');
       })

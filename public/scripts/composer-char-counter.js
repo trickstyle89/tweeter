@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 $(document).ready(function() {
   // Select the textarea element inside the form in the .new-tweet section
   let textarea = $('.new-tweet form textarea');
