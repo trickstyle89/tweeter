@@ -2,9 +2,6 @@
     overflow-y: scroll;
 }
 
-  .tweets-container:hover {
-}
-
 article {
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -55,6 +52,7 @@ article {
 
 .tweet footer {
     padding-top: 1rem;
+    margin-bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,7 +78,16 @@ article {
   header img {
     width: 50px;
     height: 50px;
-    padding: 0.5em;
+    padding: 0.35em;
     margin-top: 0px;
     }
   
+  footer .tweet-age {
+    font-size: 0.8rem;
+  }
+
+  div .tweet-content {
+    font-size: 0.8em;
+    margin-bottom: 0px;
+  }
+
