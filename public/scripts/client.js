@@ -81,9 +81,7 @@ $(document).ready(function() {
 
   // ALWAYS need to hide FIRST.
   $('#errorMsgOne').hide()
-
-   // ALWAYS need to hide SECOND.
-   $('#errorMsgTwo').hide()
+  $('#errorMsgTwo').hide()
 
   // Add an event listener that listens for the submit event
   $('#tweet-form').submit(function(event) {
@@ -96,9 +94,7 @@ $(document).ready(function() {
     // Check if the tweet is empty or too long
     
     if (!tweetText) {
-      $('.new-tweet').submit(function() {
-        $('#errorMsgOne').slideDown();
-      });
+      $('#errorMsgOne').slideDown();
       return;
     } else if (tweetText.length > 140) {
       $('#errorMsgTwo').slideDown();
