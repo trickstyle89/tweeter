@@ -44,7 +44,7 @@ $(document).ready(function() {
     
     // const dateCreated = jQuery.timeago(new Date('tweetData.created_at')); // last attempt
     
-    // const tweetAge = jQuery.timeago(tweetData.created_at); 
+    // const tweetAge = jQuery.timeago(tweetData.created_at);
 
     const tweetHtml = `
     <article class="tweet">
@@ -108,6 +108,20 @@ $(document).ready(function() {
   $('#tweet-form').submit(function(event) {
     // Prevent the default behavior of the submit event
     event.preventDefault();
+
+    // Get the tweet text from the form
+    const tweetText = $('#tweet-text').val().trim();
+
+    // Check if the tweet is empty or too long
+    if (!tweetText) {
+    // Show an error message for empty tweet
+      alert('Error: Tweet content is empty.');
+      return;
+    } else if (tweetText.length > 140) {
+    // Show an error message for too long tweet
+      alert('Error: Tweet content is too long.');
+      return;
+    }
     
     // Serialize the form data
     const formData = $(this).serialize();
