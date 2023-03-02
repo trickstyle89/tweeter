@@ -5,13 +5,24 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {  // my whole function is wrapped in this.  A good or bad thing?
-
+$(document).ready(function() {
   const createTweetElement = function(tweetData) {
 
-    const { name, avatars, handle } = tweetData.user; // object destructuring is not working because new tweets don't have this.
-    const { text } = tweetData.content; // ? tweetData.content: dataForm; // even with the use of ternary operators. I still get errors once it reachs down here.
+    const { name, avatars, handle } = tweetData.user;
+    const { text } = tweetData.content;
     const dateCreated = timeago.format(tweetData.created_at);
+
+
+    // help escape the harmful text.
+
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
+    // sanitized the text.
+    // const safeHTML = `<div class="tweet-content">${escape(text)}</div>`;
 
     const tweetHtml = `
     <article class="tweet">
@@ -21,7 +32,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
         <p>${handle}</p>
       </header>
       <div class="tweet-content">
-        ${text}
+        ${escape(text)}
       </div>
       <footer>
         <span class="tweet-age">${dateCreated}</span>
@@ -40,7 +51,7 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
 
   const renderTweets = function(tweets) {
     // Get the tweets container element
-    const $tweetsContainer = $('#tweets-container').empty(); //empty this 
+    const $tweetsContainer = $('#tweets-container').empty(); //empty this
     
     // Loop through the tweets array
     for (const tweet of tweets) {
@@ -71,14 +82,15 @@ $(document).ready(function() {  // my whole function is wrapped in this.  A good
 
   loadTweets();
 
+
   // Add an event listener that listens for the submit event
   $('#tweet-form').submit(function(event) {
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
     // Get the tweet text from the form
-    const tweetText = $('#tweet-text').val().trim();
-
+    const tweetText = $('#tweet-text').val();
+       
     // Check if the tweet is empty or too long
     if (!tweetText) {
     // Show an error message for empty tweet
