@@ -21,9 +21,6 @@ $(document).ready(function() {
       return div.innerHTML;
     };
 
-    // sanitized the text.
-    // const safeHTML = `<div class="tweet-content">${escape(text)}</div>`;
-
     const tweetHtml = `
     <article class="tweet">
       <header>
@@ -93,13 +90,13 @@ $(document).ready(function() {
        
     // Check if the tweet is empty or too long
     if (!tweetText) {
-    // Show an error message for empty tweet
-      alert('Error: Tweet content is empty.');
+      $('#errorMsg').text('Error: Tweet content is empty.').show();
       return;
     } else if (tweetText.length > 140) {
-    // Show an error message for too long tweet
-      alert('Error: Tweet content is too long.');
+      $('#errorMsg').text('Error: Tweet content is too long.').show();
       return;
+    } else {
+      $('#errorMsg').hide(); // hide the error message if there are no errors
     }
     
     // Serialize the form data into a text string.

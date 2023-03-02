@@ -51,3 +51,9 @@
     float: right;
     font-family: Bungee;
   }
+
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+  }
