@@ -101,7 +101,7 @@ $(document).ready(function() {
       return;
     } else
       $('#errorMsgOne').hide(); // hide the error message if there are no errors
-    $('#errorMsgOne').hide();
+    $('#errorMsgTwo').hide();
 
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
