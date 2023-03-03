@@ -34,20 +34,40 @@ body {
 @media only screen and (min-width: 1024px) {
   /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
 
-  main {
-    width: 50%;
-    height: 600px;
-    float: right;
+
+  body { /* profile pic*/
+    display: flex;
   }
 
-  body {
-    width: 50%;
-    height: 600px;
-    float: left;
-  }
+  
 
+  .new-tweet {  /* tweeter feed */
+    width: 90%;
+    flex-direction: column;
+    margin-top: 15em;
+    height: 500px;
+    margin-right: 3em;
+  }
+  
+
+  body > header { /* profile pic*/
+    display: flex;
+    margin-top: 15em;
+    height: 500px;
+    margin-right: 3em;
+    margin-left: 3em;
+    width: 50%;
+    
+    
 }
 
+
+nav { /* top bar*/
+  background-color: #4056A1;
+  display: flex;
+}
+
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
