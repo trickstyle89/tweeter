@@ -80,8 +80,8 @@ $(document).ready(function() {
   loadTweets();
 
   // ALWAYS need to hide FIRST.
-  $('#errorMsgOne').hide()
-  $('#errorMsgTwo').hide()
+  $('#errorMsgOne').hide();
+  $('#errorMsgTwo').hide();
 
   // Add an event listener that listens for the submit event
   $('#tweet-form').submit(function(event) {
@@ -100,7 +100,7 @@ $(document).ready(function() {
       $('#errorMsgTwo').slideDown();
       return;
     } else
-    $('#errorMsgOne').hide(); // hide the error message if there are no errors
+      $('#errorMsgOne').hide(); // hide the error message if there are no errors
     $('#errorMsgOne').hide();
 
     // Serialize the form data into a text string.
