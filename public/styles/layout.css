@@ -52,19 +52,18 @@ body {
 
   body > header { /* profile pic*/
     display: flex;
-    margin-top: 15em;
-    height: 500px;
+    margin-top: 20em;
+    height: 24em;
     margin-right: 3em;
     margin-left: 3em;
     width: 50%;
-    
-    
 }
 
 
-nav { /* top bar*/
-  background-color: #4056A1;
+body > nav { /* top bar*/
   display: flex;
+  background-color: #4056A1;
+  
 }
 
 }

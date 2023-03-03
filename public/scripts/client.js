@@ -77,7 +77,7 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // ALWAYS need to hide FIRST.
+  // ALWAYS need to hide FIRST as the page loads.
   $('#errorMsgOne').hide();
   $('#errorMsgTwo').hide();
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
-    //Esnures that error message 'reset' for every submit push.
+    //Esnures that error message 'resets' for every submit push.
     $('#errorMsgOne').hide(); 
     $('#errorMsgTwo').hide();
 
