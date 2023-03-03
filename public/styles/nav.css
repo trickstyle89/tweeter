@@ -2,7 +2,7 @@ nav {
     display: flex;
     height: 120px;
     width: 100%;
-    background-image: url('45-degree-fabric-dark.png');
+    background-image: url('../images/45-degree-fabric-dark.png');
     background-color: #fffc35;
     color: #FFFFFF;
     font-family: Bungee;
