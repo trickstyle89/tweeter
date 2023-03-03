@@ -88,7 +88,8 @@ $(document).ready(function() {
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
-    $('#errorMsgOne').hide(); // hide the error message if there are no errors
+    //Esnures that error message 'reset' for every submit push.
+    $('#errorMsgOne').hide(); 
     $('#errorMsgTwo').hide();
 
     // Get the tweet text from the form
@@ -102,11 +103,8 @@ $(document).ready(function() {
     } else if (tweetText.length > 140) {
       $('#errorMsgTwo').slideDown();
       return;
-    } // else
-     // $('#errorMsgOne').hide(); // hide the error message if there are no errors
-      //$('#errorMsgTwo').hide();
+    }
     
-
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
     
@@ -125,7 +123,6 @@ $(document).ready(function() {
     // Reset the character counter
     $('.counter').text('140');
       
-
   });
 
 });
