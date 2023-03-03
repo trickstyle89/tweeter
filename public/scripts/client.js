@@ -88,6 +88,9 @@ $(document).ready(function() {
     // Prevent the default behavior of the submit event
     event.preventDefault();
 
+    $('#errorMsgOne').hide(); // hide the error message if there are no errors
+    $('#errorMsgTwo').hide();
+
     // Get the tweet text from the form
     const tweetText = $('#tweet-text').val();
        
@@ -99,9 +102,10 @@ $(document).ready(function() {
     } else if (tweetText.length > 140) {
       $('#errorMsgTwo').slideDown();
       return;
-    } else
-      $('#errorMsgOne').hide(); // hide the error message if there are no errors
-    $('#errorMsgTwo').hide();
+    } // else
+     // $('#errorMsgOne').hide(); // hide the error message if there are no errors
+      //$('#errorMsgTwo').hide();
+    
 
     // Serialize the form data into a text string.
     const formData = $(this).serialize();
