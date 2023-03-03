@@ -12,9 +12,7 @@ $(document).ready(function() {
     const { text } = tweetData.content;
     const dateCreated = timeago.format(tweetData.created_at);
 
-
-    // help escape the harmful text.
-
+    // a function that was provided to help escape the harmful text.
     const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
